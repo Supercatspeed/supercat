@@ -39,7 +39,7 @@ direct_link = get_direct_download_link(onedrive_share_link)
 try:
     response = requests.get(direct_link)
     excel_data = pd.ExcelFile(io.BytesIO(response.content), engine='openpyxl')
-    df = excel_data.parse("TB_1")  # Replace with your actual sheet name
+    df = excel_data.parse("Master")  # Replace with your actual sheet name
     st.success("Excel file loaded successfully.")
 except Exception as e:
     st.error(f"Failed to load Excel file: {e}")
